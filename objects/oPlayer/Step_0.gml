@@ -3,9 +3,22 @@
 
 key_left = keyboard_check(vk_left);
 key_right = keyboard_check(vk_right);
-key_space = keyboard_check(vk_space);
+key_space = keyboard_check_pressed(vk_space);
+key_catch = keyboard_check_pressed(vk_tab);
 
-vel[1] += 0.8;
+if !dead && can_catch && key_catch {
+	can_catch = false;
+	is_catching = true;
+	alarm[0] = room_speed / 8;
+	alarm[1] = room_speed / 2;
+}
+
+if key_left && key_right {
+	key_left = false;
+	key_right = false;
+}
+
+vel[1] += 0.7;
 
 if (floor(vel[1]) != 0) {
 	grounded = false;
@@ -35,22 +48,22 @@ if (floor(vel[0]) != 0) {
 	x += floor(vel[0]);
 }
 
-var accel = grounded ? 1 : 0.7;
-var max_speed = grounded ? 6 : 4;
+var accel = grounded ? 0.5 : 0.3;
+var max_speed = grounded ? 7 : 5;
 var curr_friction = grounded ? 0.5 : 0.8;
-show_debug_message("tick");
-show_debug_message(max_speed);
-show_debug_message(vel[0]);
 
-var influencing = abs(vel[0]) < max_speed;
-
-if key_left { // walking left
+if dead {
+	sprite_index = sPlayerJump;
+	image_speed = 0;
+	image_index = 0;
+	image_angle = 90;
+} else if key_left { // walking left
 	
-	if(vel[0] > -max_speed) {
+	if vel[0] > -max_speed {
 		vel[0] = max(vel[0] - accel, -max_speed);
 	}
 	
-	if(grounded) {
+	if grounded {
 		sprite_index = sPlayerWalk;
 		image_speed = vel[0] / 3;
 	} else {
@@ -62,11 +75,11 @@ if key_left { // walking left
 	
 } else if key_right { // walking right
 	
-	if(vel[0] < max_speed) {
+	if vel[0] < max_speed {
 		vel[0] = min(vel[0] + accel, max_speed);
 	}
 	
-	if(grounded) {
+	if grounded {
 		sprite_index = sPlayerWalk;
 		image_speed = vel[0] / 3;
 	} else {
@@ -77,8 +90,7 @@ if key_left { // walking left
 	image_xscale = -1;
 	
 } else { // idle
-	
-	if(grounded) {
+	if grounded {
 		sprite_index = sPlayerIdle;
 		image_speed = 0.5;	
 	} else {
@@ -106,26 +118,26 @@ if abs(vel[1]) < 0.3 {
 	vel[1] = 0;
 }
 
-if key_space && grounded { // jumping
+if !dead && key_space && grounded { // jumping
 	vel[1] = -15;
 	sprite_index = sPlayerJump;
 	image_speed = 0;
 	
 	if key_left {
-		vel[0] = max(vel[0] - 4, -8);
+		vel[0] = max(vel[0] - 4, -8.5);
 	} else if key_right {
-		vel[0] = min(vel[0] + 4, 8);
+		vel[0] = min(vel[0] + 4, 8.5);
 	}
 }
 
-if x > room_width {
-	x = -sprite_width;
-} else if x + sprite_width < 0 {
-	x = room_width;
+if x - abs(sprite_width) / 2 > room_width {
+	x = -abs(sprite_width) / 2;
+} else if x + abs(sprite_width) / 2 < 0 {
+	x = room_width + abs(sprite_width) / 2;
 }
 
-if y > room_height {
-	y = -sprite_height;
-} else if y + sprite_height < 0 {
-	y = room_height ;
+if y - abs(sprite_height) / 2 > room_height {
+	y = -abs(sprite_height) / 2;
+} else if y + abs(sprite_height) / 2 < 0 {
+	y = room_height + abs(sprite_height) / 2;
 }
