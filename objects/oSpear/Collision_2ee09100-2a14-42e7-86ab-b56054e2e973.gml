@@ -18,11 +18,12 @@ if other.dead {
 	exit;
 }
 
-x = other.x;
-y = other.y;
-if(thrown) // we are catching
+if thrown {
+	x = other.x;
+	y  = other.y;
 	audio_play_sound(catchSound, 1, false);
-thrown = false;
-vel = [0, 5];
-grounded = false;
-holding = other;
+	thrown = false;
+	vel = [0, 5];
+	grounded = false;
+	holding = other;
+}

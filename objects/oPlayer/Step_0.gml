@@ -20,32 +20,67 @@ if key_left && key_right {
 
 vel[1] += 0.7;
 
-if (floor(vel[1]) != 0) {
-	grounded = false;
-	for (var y_move = 0; y_move < abs(floor(vel[1])); ++y_move) {
-		var collide = place_meeting(x, y + (y_move + 1) * sign(vel[1]), oWall);
-		if collide {
-			grounded = vel[1] > 0;
-			y += y_move * sign(vel[1]);
-			vel[1] = 0;
-			break;
+if (floor(vel[0]) != 0) {
+	if place_meeting(x + floor(vel[0]), y, oWall) {
+		while (true) {
+			var found = false;
+			var collide = false;
+			for (var i = 0; i < instance_number(oWall); ++i) {
+				if place_meeting(x + sign(vel[0]), y, instance_find(oWall, i)) {
+					if sign(vel[0]) == sign(instance_find(oWall, i).x - x) {
+						collide = true;
+					} else {
+						found = true;
+					}
+					break;
+				}
+			}
+			
+			if collide {
+				vel[0] = 0
+				break;
+			} else if found {
+				break;
+			} else {
+				x += sign(vel[0]);
+			}
 		}
+	} else {
+		x += floor(vel[0]);
 	}
-	
-	y += floor(vel[1]);
 }
 
-if (floor(vel[0]) != 0) {
-	for (var x_move = 0; x_move < abs(floor(vel[0])); ++x_move) {
-		var collide = place_meeting(x + (x_move + 1) * sign(vel[0]), y, oWall);
-		if collide {
-			x += x_move * sign(vel[0]);
-			vel[0] = 0;
-			break;
+if (floor(vel[1]) != 0) {
+	grounded = false;
+	if place_meeting(x, y + floor(vel[1]), oWall) {
+		while (true) {
+			var found = false;
+			var collide = false;
+			for (var i = 0; i < instance_number(oWall); ++i) {
+				if place_meeting(x, y + sign(vel[1]), instance_find(oWall, i)) {
+					if sign(vel[1]) == sign(instance_find(oWall, i).y - y) {
+						collide = true;
+					} else {
+						found = true;
+					}
+					break;
+				}
+			}
+			
+			if collide {
+				show_debug_message("grounded");
+				grounded = true;
+				vel[1] = 0;
+				break;
+			} else if found {
+				break;
+			} else {
+				y += sign(vel[1]);
+			}
 		}
+	} else {
+		y += floor(vel[1]);
 	}
-	
-	x += floor(vel[0]);
 }
 
 var accel = grounded ? 0.5 : 0.3;
