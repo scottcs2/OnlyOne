@@ -47,6 +47,38 @@
             }
         },
         {
+            "Key": "0a9c6683-4b54-47c7-858e-2cbf4a4a623b",
+            "Value": {
+                "id": "ad306279-3a79-4cef-8a9f-951cd7c4ce7e",
+                "resourcePath": "sounds\\catchSound\\catchSound.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "12093102-1828-475c-b569-7474e4912f3e",
+            "Value": {
+                "id": "024b6b09-d799-4107-ac24-62892ac82153",
+                "resourcePath": "sounds\\jumpSound\\jumpSound.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "184c15e5-4de9-48d6-aabe-9ef7d29af029",
+            "Value": {
+                "id": "8b3bf59c-245b-4464-9e2f-a968cbf9c3f7",
+                "resourcePath": "sounds\\startSound\\startSound.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "2fb5bc19-1940-4cb1-93a4-d62eb0b7b5a5",
+            "Value": {
+                "id": "a532e1db-5199-4810-b55d-9eea49b6c4bb",
+                "resourcePath": "sounds\\backgroundMusic\\backgroundMusic.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "30a0d61c-07e4-4b3a-8edb-02071f722d88",
             "Value": {
                 "id": "26d07e5f-c3c8-4ee6-83c5-fe81fe19ba88",
@@ -71,11 +103,35 @@
             }
         },
         {
+            "Key": "53222b92-d611-4d26-ba46-2f27782d33d9",
+            "Value": {
+                "id": "f551b590-53ab-427b-a20d-43f9e7760014",
+                "resourcePath": "sounds\\throwSound\\throwSound.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "5bf85ef1-41c4-4342-8164-344b31981c61",
+            "Value": {
+                "id": "e75992fe-2888-43f7-98d5-58825ff389ec",
+                "resourcePath": "sounds\\runSound\\runSound.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "5cf002d3-9bab-497d-b827-225741a9ede2",
             "Value": {
                 "id": "317dd393-c4a6-4070-8a90-81cfb7a27bf3",
                 "resourcePath": "views\\5cf002d3-9bab-497d-b827-225741a9ede2.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "66ee4c0a-b9f8-4ba9-8c13-b68f42449187",
+            "Value": {
+                "id": "1ab9b356-1666-404c-a0cb-3b45b491b8ff",
+                "resourcePath": "objects\\oSoundManager\\oSoundManager.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -188,6 +244,14 @@
                 "id": "56235939-b5ce-451a-ba5f-0e41b3dde5f6",
                 "resourcePath": "sprites\\sPlayerIdle\\sPlayerIdle.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c8305c08-7f47-4a2d-8a59-fdab9fa33927",
+            "Value": {
+                "id": "a556f446-5b95-46f2-965e-1b8d634e45d7",
+                "resourcePath": "sounds\\hitSound\\hitSound.yy",
+                "resourceType": "GMSound"
             }
         },
         {

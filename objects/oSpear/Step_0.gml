@@ -2,13 +2,14 @@
 // You can write your code in this editor
 
 if holding != undefined {
-	if holding.key_catch {
+	if holding.key_catch { // player is throwing
 		if holding.key_left {
 			vel[0] = -30;
 		} else if holding.key_right {
 			vel[0] = 30;
 		}
 
+		audio_play_sound(throwSound, 1, false);
 		thrown = true;
 		throwing = holding;
 		holding = undefined;

@@ -53,10 +53,12 @@ var max_speed = grounded ? 7 : 5;
 var curr_friction = grounded ? 0.5 : 0.8;
 
 if dead {
+	
 	sprite_index = sPlayerJump;
 	image_speed = 0;
 	image_index = 0;
 	image_angle = 90;
+	
 } else if key_left { // walking left
 	
 	if vel[0] > -max_speed {
@@ -75,13 +77,14 @@ if dead {
 	
 } else if key_right { // walking right
 	
+	
 	if vel[0] < max_speed {
 		vel[0] = min(vel[0] + accel, max_speed);
 	}
 	
 	if grounded {
 		sprite_index = sPlayerWalk;
-		image_speed = vel[0] / 3;
+		image_speed = vel[0] / 3;	
 	} else {
 		sprite_index = sPlayerJump;
 		image_index = 1;
