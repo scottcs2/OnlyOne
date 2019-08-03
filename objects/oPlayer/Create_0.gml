@@ -3,3 +3,5 @@
 
 vel = [0, 0];
 grounded = false;
+
+game_set_speed(60, gamespeed_fps);
