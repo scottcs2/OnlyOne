@@ -1,36 +1,37 @@
 /// @description Insert description here
 // You can write your code in this editor
-key_space = keyboard_check(vk_tab);
+//key_tab = keyboard_check(vk_tab);
 
-vel[1] -= 0.1;
+//if thrown == false {
+//	if key_tab {
+//		thrown = true;
+//	}	
+//	x = oPlayer.x;
+//	y = oPlayer.y;
+//} else if not grounded{
+//	vel[1] -= 0.15;
+//	y = y - vel[1];
+//	x = x + vel[0];
+//}
+
+key_tab_press = keyboard_check_pressed(vk_tab);
+key_tab_release = keyboard_check_released(vk_tab);
 
 if thrown == false {
-	if key_space {
+	if key_tab_release {
+		if oPlayer.key_left {
+			vel[0] = -15;
+		} else if oPlayer.key_right {
+			vel[0] = 15;
+		}
 		thrown = true;
-	}	
+	}
 	x = oPlayer.x;
 	y = oPlayer.y;
-} else {
+} else if not grounded {
+	vel[1] -= 0.15;
 	y = y - vel[1];
 	x = x + vel[0];
-}
-
-repeat (floor(vel[1])) {
-	var pix = vel[1] < 0 ? y - 1 : y + sprite_height;
-	
-	for (var i = 0; i < instance_number(oWall); ++i) {
-		if collision_point(x, pix, instance_find(oWall, i), false, true) {
-			grounded = true;
-			break;
-		}
-	}
-	
-	if grounded {
-		vel[1] = 0;
-		break;
-	} else {
-		y += sign(vel[1]);	
-	}
 }
 
 if x > room_width {
