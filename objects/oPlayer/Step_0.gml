@@ -61,6 +61,8 @@ if dead {
 	
 } else if key_left { // walking left
 	
+	direction = -1;
+	
 	if vel[0] > -max_speed {
 		vel[0] = max(vel[0] - accel, -max_speed);
 	}
@@ -77,6 +79,7 @@ if dead {
 	
 } else if key_right { // walking right
 	
+	direction = 1;
 	
 	if vel[0] < max_speed {
 		vel[0] = min(vel[0] + accel, max_speed);

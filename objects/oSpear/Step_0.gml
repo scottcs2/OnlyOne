@@ -3,10 +3,13 @@
 
 if holding != undefined {
 	if holding.key_catch { // player is throwing
-		if holding.key_left {
-			vel[0] = -30;
-		} else if holding.key_right {
+		
+		if oPlayer.direction > 0 {
 			vel[0] = 30;
+		} else if oPlayer.direction < 0 {
+			vel[0] = -30;
+		} else {
+			vel[0] = -30;
 		}
 
 		audio_play_sound(throwSound, 1, false);
