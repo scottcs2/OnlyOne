@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "83423296-bd62-47da-b93f-181c381a3dd8",
+            "Value": {
+                "id": "8826aaff-e60c-492b-a8db-a5f135a65e83",
+                "resourcePath": "rooms\\menutest\\menutest.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "893def1a-c232-44c3-aaa0-d8f67e3dde0f",
             "Value": {
                 "id": "0f3c0733-476a-4042-9a0e-a3d6a479e85d",
@@ -263,6 +271,14 @@
             }
         },
         {
+            "Key": "db13d7ff-5d27-4df6-8927-da13e201ab72",
+            "Value": {
+                "id": "6b74b515-883f-43d8-aa9e-8705d4775657",
+                "resourcePath": "objects\\oMenu\\oMenu.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "dc064c79-3dc0-42b5-b223-2664116819e9",
             "Value": {
                 "id": "6f3daa6d-25a0-4661-a393-95c654aa3a65",
@@ -284,6 +300,14 @@
                 "id": "2df4790d-237c-437c-904b-a2fa7663af9e",
                 "resourcePath": "sprites\\sPlayerJump\\sPlayerJump.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e33283ae-c7d1-43bd-98cc-1fa652a0b075",
+            "Value": {
+                "id": "6acda9ba-d45e-49bd-a23d-6718e8a87e1b",
+                "resourcePath": "fonts\\font_main\\font_main.yy",
+                "resourceType": "GMFont"
             }
         },
         {
