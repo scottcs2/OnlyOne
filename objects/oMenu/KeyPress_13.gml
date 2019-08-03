@@ -4,14 +4,14 @@
 switch(menu_index) {
 
 	case 0:
-		show_debug_message("NEW 2 PLAYER MENU");
+		show_debug_message("PLAY");
 		break;
 	
 	case 1:
-		show_debug_message("NEW 4 PLAYER MENU");
+		show_debug_message("OPTIONS");
 		break;
 	
-	case 3:
+	case 2:
 		game_end();
 		break;
 }
