@@ -4,4 +4,6 @@
 vel = [0, 0];
 grounded = false;
 
+image_speed = 0;
+
 game_set_speed(60, gamespeed_fps);

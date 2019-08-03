@@ -44,10 +44,48 @@ show_debug_message(vel[0]);
 
 var influencing = abs(vel[0]) < max_speed;
 
-if key_left && vel[0] > -max_speed {
-	vel[0] = max(vel[0] - accel, -max_speed);
-} else if key_right && vel[0] < max_speed {
-	vel[0] = min(vel[0] + accel, max_speed);
+if key_left { // walking left
+	
+	if(vel[0] > -max_speed) {
+		vel[0] = max(vel[0] - accel, -max_speed);
+	}
+	
+	if(grounded) {
+		sprite_index = sPlayerWalk;
+		image_speed = vel[0] / 3;
+	} else {
+		sprite_index = sPlayerJump;
+		image_speed = 0;
+		image_index = 1;
+	}
+	image_xscale = 1;
+	
+} else if key_right { // walking right
+	
+	if(vel[0] < max_speed) {
+		vel[0] = min(vel[0] + accel, max_speed);
+	}
+	
+	if(grounded) {
+		sprite_index = sPlayerWalk;
+		image_speed = vel[0] / 3;
+	} else {
+		sprite_index = sPlayerJump;
+		image_index = 1;
+		image_speed = 0;
+	}
+	image_xscale = -1;
+	
+} else { // idle
+	
+	if(grounded) {
+		sprite_index = sPlayerIdle;
+		image_speed = 0.5;	
+	} else {
+		sprite_index = sPlayerJump;
+		image_speed = 0;
+		image_index = 1;
+	}
 }
 
 if (!key_left && !key_right) || (key_left && vel[0] > 0) || (key_right && vel[0] < 0) {
@@ -68,8 +106,10 @@ if abs(vel[1]) < 0.3 {
 	vel[1] = 0;
 }
 
-if key_space && grounded {
+if key_space && grounded { // jumping
 	vel[1] = -15;
+	sprite_index = sPlayerJump;
+	image_speed = 0;
 	
 	if key_left {
 		vel[0] = max(vel[0] - 4, -8);
