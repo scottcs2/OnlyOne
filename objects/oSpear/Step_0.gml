@@ -17,6 +17,11 @@ if holding != undefined {
 		throwing = holding;
 		holding = undefined;
 	} else {
+		if oPlayer.direction > 0 {
+			image_xscale = 1;
+		} else {
+			image_xscale = -1;
+		}
 		x = holding.x;
 		y = holding.y;
 	}

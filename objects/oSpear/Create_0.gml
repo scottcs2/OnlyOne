@@ -7,3 +7,6 @@ grounded = false;
 holding = instance_find(oPlayer, 0);
 throwing = undefined;
 impaled = ds_list_create();
+
+holdingXOffset = 20;
+holdingYOffset = 5;
