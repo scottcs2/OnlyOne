@@ -12,6 +12,13 @@ for (var i = 0; i < 4; ++i) {
 	if attached && players[i] == undefined {
 		players[i] = instance_create_layer(room_width / 2, room_height / 2, "players", oPlayer);
 		players[i].index = i;
+		
+		var spawn = instance_find(oPlayerSpawn, i);
+		if spawn != noone {
+			players[i].x = spawn.x;
+			players[i].y = spawn.y;
+		}
+		
 	} else if !attached && players[i] != undefined {
 		instance_destroy(players[i]);
 		players[i] = undefined;
@@ -26,6 +33,12 @@ if count == 0 {
 	if keyboard == undefined {
 		keyboard = instance_create_layer(room_width / 2, room_height / 2, "players", oPlayer);
 		keyboard.index = -1;
+		
+		var spawn = instance_find(oPlayerSpawn, 0);
+		if spawn != noone {
+			keyboard.x = spawn.x;
+			keyboard.y = spawn.y;
+		}
 	}
 } else if keyboard != undefined {
 	instance_destroy(keyboard);

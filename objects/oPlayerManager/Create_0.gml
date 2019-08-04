@@ -15,7 +15,13 @@ if !variable_global_exists("players") {
 	
 		var player = instance_create_layer(room_width / 2, room_height / 2, "players", oPlayer);
 		player.index = global.players[i];
-	
+		
+		var spawn = instance_find(oPlayerSpawn, i);
+		if spawn != noone {
+			player.x = spawn.x;
+			player.y = spawn.y;
+		}
+		
 		switch global.player_selections[i] {
 			case 0:
 				player.sIdle = sSpectreIdle;
