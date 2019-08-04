@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if !is_debug {
+	exit;
+}
+
 var count = 0;
 
 for (var i = 0; i < 4; ++i) {

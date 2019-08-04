@@ -107,7 +107,7 @@ var curr_friction = grounded ? 0.5 : 0.8;
 
 if dead {
 	
-	sprite_index = sPlayerJump;
+	sprite_index = sJump;
 	image_speed = 0;
 	image_index = 0;
 	image_angle = 90;
@@ -121,10 +121,10 @@ if dead {
 	}
 	
 	if grounded {
-		sprite_index = sPlayerWalk;
+		sprite_index = sWalk;
 		image_speed = vel[0] / 3;
 	} else {
-		sprite_index = sPlayerJump;
+		sprite_index = sJump;
 		image_speed = 0;
 		image_index = 1;
 	}
@@ -139,10 +139,10 @@ if dead {
 	}
 	
 	if grounded {
-		sprite_index = sPlayerWalk;
+		sprite_index = sWalk;
 		image_speed = vel[0] / 3;	
 	} else {
-		sprite_index = sPlayerJump;
+		sprite_index = sJump;
 		image_index = 1;
 		image_speed = 0;
 	}
@@ -150,10 +150,10 @@ if dead {
 	
 } else { // idle
 	if grounded {
-		sprite_index = sPlayerIdle;
+		sprite_index = sIdle;
 		image_speed = 0.5;	
 	} else {
-		sprite_index = sPlayerJump;
+		sprite_index = sJump;
 		image_speed = 0;
 		image_index = 1;
 	}
@@ -179,7 +179,7 @@ if abs(vel[1]) < 0.3 {
 
 if !dead && key_space && grounded { // jumping
 	vel[1] = -15;
-	sprite_index = sPlayerJump;
+	sprite_index = sJump;
 	image_speed = 0;
 	
 	if key_left {

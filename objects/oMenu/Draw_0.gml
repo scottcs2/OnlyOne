@@ -86,5 +86,4 @@ switch screen {
 	break;
 	case menuScreen.LEVEL_SEL:
 		break;
-
 }

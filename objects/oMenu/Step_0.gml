@@ -123,9 +123,24 @@ switch screen {
 			}
 			
 			if finished {
-			
 				room_goto(speartest);
 				
+				global.players = [-2, -2, -2, -2];
+				global.player_selections = [0, 0, 0, 0];
+				
+				for(var i = 0; i < char_button_arg[0]; i++) {
+					if playerLockedIn[i] {
+						var index;
+						if gamepad_is_connected(i) {
+							index = i;
+						} else {
+							index = -1
+						}
+						
+						global.players[i] = index;
+						global.player_selections[i] = playerSel[i];
+					}
+				}
 			}
 				
 			for(var i = 0; i < 4; i++) {
@@ -133,9 +148,7 @@ switch screen {
 				var adj = key_right[i] - key_left[i];
 				
 				if !playerLockedIn[i] {
-					playerSel[i] += adj;
-					playerSel[i] = max(0, playerSel[i]);
-					playerSel[i] = min(3, playerSel[i]);
+					playerSel[i] = (playerSel[i] + adj) % 4;
 				}
 			
 			}
