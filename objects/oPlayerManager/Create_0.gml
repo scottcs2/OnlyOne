@@ -5,7 +5,7 @@ is_debug = false
 players = [undefined, undefined, undefined, undefined];
 keyboard = undefined;
 
-if !variable_global_exists("player") {
+if !variable_global_exists("players") {
 	is_debug = true;
 } else {
 	for (var i = 0; i < 4; ++i) {

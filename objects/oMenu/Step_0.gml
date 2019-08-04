@@ -139,6 +139,7 @@ switch screen {
 						
 						global.players[i] = index;
 						global.player_selections[i] = playerSel[i];
+						show_debug_message(playerSel[i]);
 					}
 				}
 			}
@@ -149,6 +150,7 @@ switch screen {
 				
 				if !playerLockedIn[i] {
 					playerSel[i] = (playerSel[i] + adj) % 4;
+					if playerSel[i] < 0 { playerSel[i] = 3; }
 				}
 			
 			}
