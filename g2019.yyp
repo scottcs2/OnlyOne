@@ -407,6 +407,7 @@
             }
         },
         {
+<<<<<<< HEAD
             "Key": "69217a7f-f8d5-4e68-9b3c-591b993db908",
             "Value": {
                 "id": "7ea0fd95-8cc7-4246-be69-81d257f1af65",
@@ -428,6 +429,13 @@
                 "id": "ccdb43bf-528e-4684-a486-1fa2017e2c06",
                 "resourcePath": "sprites\\sSkeleWalk1\\sSkeleWalk1.yy",
                 "resourceType": "GMSprite"
+=======
+            "Key": "6ad1a5f4-98f5-4fea-8f7d-3193b63e430d",
+            "Value": {
+                "id": "c108952f-b49b-45e6-8733-5115a2421a2e",
+                "resourcePath": "rooms\\room1\\room1.yy",
+                "resourceType": "GMRoom"
+>>>>>>> 5667efc602c0a752d8da6ade8b7a46652b243c5b
             }
         },
         {
@@ -460,14 +468,6 @@
                 "id": "35eca3b9-9c6e-4e91-ab49-8a8204249f01",
                 "resourcePath": "tilesets\\tMain\\tMain.yy",
                 "resourceType": "GMTileSet"
-            }
-        },
-        {
-            "Key": "75c9533f-dfa6-48e3-96d2-8b5484674131",
-            "Value": {
-                "id": "34d130b8-fa52-4d83-b115-ba8e069603cb",
-                "resourcePath": "rooms\\room1\\room1.yy",
-                "resourceType": "GMRoom"
             }
         },
         {
