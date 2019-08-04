@@ -62,10 +62,6 @@ for (var i = 0; i < 4; ++i) {
 	}
 }
 
-show_debug_message("x")
-show_debug_message(alive);
-show_debug_message(dead);
-
 if alive < 2 && dead > 0 {
 	room_restart();
 }
