@@ -123,7 +123,7 @@ switch screen {
 			}
 			
 			if finished {
-				room_goto(speartest);
+				room_goto(room0);
 				
 				global.players = [-2, -2, -2, -2];
 				global.player_selections = [0, 0, 0, 0];
