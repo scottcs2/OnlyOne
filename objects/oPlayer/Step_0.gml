@@ -6,6 +6,19 @@ key_right = keyboard_check(vk_right);
 key_space = keyboard_check_pressed(vk_space);
 key_catch = keyboard_check_pressed(vk_tab);
 
+if impaled != undefined {
+	x = impaled.x;
+	y = impaled.y;
+
+	vel = [0, 0];
+} else {
+	vel[1] += 0.7;
+}
+
+show_debug_message(impaled != undefined);
+show_debug_message(dead);
+show_debug_message(vel[1]);
+
 if !dead && can_catch && key_catch {
 	can_catch = false;
 	is_catching = true;
@@ -17,8 +30,6 @@ if key_left && key_right {
 	key_left = false;
 	key_right = false;
 }
-
-vel[1] += 0.7;
 
 if (floor(vel[0]) != 0) {
 	if place_meeting(x + floor(vel[0]), y, oWall) {
@@ -68,7 +79,6 @@ if (floor(vel[1]) != 0) {
 			}
 			
 			if collide {
-				show_debug_message("grounded");
 				grounded = true;
 				vel[1] = 0;
 				break;

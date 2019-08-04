@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 thrown = false;
-vel = [0, 5];
+vel = [0, 0];
 grounded = false;
 
 holding = instance_find(oPlayer, 0);
