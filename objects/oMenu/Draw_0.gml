@@ -19,6 +19,10 @@ switch screen {
 			}
 			draw_text(main_button_x[i], main_button_y[i], main_button_t[i]);
 		}
+		
+		draw_set_valign(fa_top);
+		draw_set_halign(fa_left);
+		draw_sprite(sAnimSpear, 0, width / 2, height / 4);
 		break;
 	case menuScreen.OPTION:
 		draw_set_font(font_main);

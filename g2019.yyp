@@ -258,7 +258,7 @@
             "Key": "83423296-bd62-47da-b93f-181c381a3dd8",
             "Value": {
                 "id": "8826aaff-e60c-492b-a8db-a5f135a65e83",
-                "resourcePath": "rooms\\menutest\\menutest.yy",
+                "resourcePath": "rooms\\menu_screen\\menu_screen.yy",
                 "resourceType": "GMRoom"
             }
         },
@@ -284,6 +284,14 @@
                 "id": "9a4f35e4-b6b2-4b3c-82e7-2fc55687133d",
                 "resourcePath": "objects\\oPlayerManager\\oPlayerManager.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "94944b3c-94f2-4d28-a857-519edf878a00",
+            "Value": {
+                "id": "1fa4ed2e-45ce-4847-b554-8aef119dbc93",
+                "resourcePath": "fonts\\font_title\\font_title.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -319,6 +327,14 @@
             }
         },
         {
+            "Key": "b3e0672d-2688-408c-93c9-70cf2fbbe3c2",
+            "Value": {
+                "id": "4e8fd25d-617f-431f-912c-63a8fc5a112f",
+                "resourcePath": "rooms\\titleScreen\\titleScreen.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "b6a03c61-f03b-4587-bfe5-3a44af14b7d3",
             "Value": {
                 "id": "35dbe142-0ce3-4b3d-945c-017d1a4a19b6",
@@ -340,6 +356,14 @@
                 "id": "4994a2ee-1891-4ded-b5c8-11a148477f46",
                 "resourcePath": "rooms\\speartest\\speartest.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "bce0e54e-84ab-4bf9-83f3-d16d00901b17",
+            "Value": {
+                "id": "099e2c6b-3333-46d6-8555-ced13daae450",
+                "resourcePath": "sprites\\sAnimSpear\\sAnimSpear.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -468,6 +492,14 @@
                 "id": "57cf3877-aefd-43c1-a44a-4871a1437154",
                 "resourcePath": "sprites\\sSnakeWalk\\sSnakeWalk.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f0f8598c-3a02-4749-999b-daf5c39a819c",
+            "Value": {
+                "id": "385db81f-5f40-4b3c-93cd-742ab80331c4",
+                "resourcePath": "objects\\oTitleScreen\\oTitleScreen.yy",
+                "resourceType": "GMObject"
             }
         },
         {

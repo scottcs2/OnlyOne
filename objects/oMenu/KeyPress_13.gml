@@ -2,24 +2,27 @@
 // You can write your code in this editor
 switch screen {
 	case menuScreen.TITLE:
-		for(var i = 0; i < main_num_buttons; i++) {
-			main_button_x[i] = width;
+	
+		if(mainAnimFinished) {
+			for(var i = 0; i < main_num_buttons; i++) {
+				main_button_x[i] = width;
+			}
+			last_selected = 0;
+			mainAnimFinished = false;
+			switch(menu_index) {
+				case 0: // play
+					screen = menuScreen.CHAR_SEL;
+				break;
+				case 1: // options
+					screen = menuScreen.OPTION;
+				break;
+				case 2: // quit
+					game_end();
+				break;
+			}
+			menu_index = 0;
+			audio_play_sound(catchSound, 1, false);
 		}
-		last_selected = 0;
-		mainAnimFinished = false;
-		switch(menu_index) {
-			case 0: // play
-				screen = menuScreen.CHAR_SEL;
-			break;
-			case 1: // options
-				screen = menuScreen.OPTION;
-			break;
-			case 2: // quit
-				game_end();
-			break;
-		}
-		menu_index = 0;
-		audio_play_sound(catchSound, 1, false);
 	break;
 	case menuScreen.OPTION:
 		switch(menu_index) {
