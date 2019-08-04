@@ -1,6 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if holding != undefined && !instance_exists(holding) {
+	holding = noone;
+}
+
+if holding == noone {
+	visible = false;
+	holding = instance_find(oPlayer, 0);
+	exit;
+} else {
+	visible = true;
+}	
+
 if holding != undefined {
 	if holding.key_catch { // player is throwing
 		if holding.direction > 0 {
@@ -71,9 +83,6 @@ if holding != undefined {
 				var collide = false;
 				for (var i = 0; i < instance_number(oWall); ++i) {
 					if place_meeting(x, y + sign(vel[1]), instance_find(oWall, i)) {
-						show_debug_message(vel[1]);
-						show_debug_message(sign(instance_find(oWall, i).y - y));
-
 						if sign(vel[1]) == sign(instance_find(oWall, i).y - y) {
 							collide = true;
 						} else {

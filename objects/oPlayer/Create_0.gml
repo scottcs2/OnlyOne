@@ -10,6 +10,9 @@ is_catching = false;
 
 impaled = undefined;
 
+direction = 1;
+key_catch = false;
+
 image_speed = 0;
 
 game_set_speed(60, gamespeed_fps);

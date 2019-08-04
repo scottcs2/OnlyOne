@@ -1,10 +1,22 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-key_left = keyboard_check(vk_left);
-key_right = keyboard_check(vk_right);
-key_space = keyboard_check_pressed(vk_space);
-key_catch = keyboard_check_pressed(vk_tab);
+var key_left, key_right;
+var key_space;
+
+if index == -1 {
+	key_left = keyboard_check(vk_left);
+	key_right = keyboard_check(vk_right);
+	key_space = keyboard_check_pressed(vk_space);
+	key_catch = keyboard_check_pressed(vk_tab);
+} else {
+	var haxis = gamepad_axis_value(index, gp_axislh);
+	// var vaxis = gamepad_axis_value(index, gp_axislv);
+	key_left = haxis < -0.3;
+	key_right = haxis > 0.3;
+	key_space = gamepad_button_check_pressed(index, gp_face1);
+	key_catch = gamepad_button_check_pressed(index, gp_face2);
+}
 
 if impaled != undefined {
 	x = impaled.x;
@@ -14,10 +26,6 @@ if impaled != undefined {
 } else {
 	vel[1] += 0.7;
 }
-
-show_debug_message(impaled != undefined);
-show_debug_message(dead);
-show_debug_message(vel[1]);
 
 if !dead && can_catch && key_catch {
 	can_catch = false;
