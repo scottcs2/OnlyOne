@@ -19,6 +19,7 @@ switch screen {
 			break;
 		}
 		menu_index = 0;
+		audio_play_sound(catchSound, 1, false);
 	break;
 	case menuScreen.OPTION:
 		switch(menu_index) {
@@ -43,16 +44,31 @@ switch screen {
 				menu_index = 0;
 				screen = menuScreen.TITLE;
 			break;
-				
 		}
+		audio_play_sound(catchSound, 1, false);
 	break;
 	case menuScreen.CHAR_SEL:
-		if !char_players_selected {
-			char_players_selected = true;	
+		if !char_players_selected { // finished choosing num players
+			char_players_selected = true;
+			audio_play_sound(catchSound, 1, false);
 		} else {
+			var controller_pressed = false;
+			for(var i = 0; i < char_button_arg[0]; i++) {
+				if controller_pressed_enter[i] && !playerLockedIn[i] {					
+					playerLockedIn[i] = true;
+					audio_play_sound(catchSound, 1, false);
+					controller_pressed = true;
+				}
+			}
 			
+			if !controller_pressed && num_controllers < char_button_arg[0] {
 			
-		
+				if !playerLockedIn[num_controllers] {
+					playerLockedIn[num_controllers] = true;
+					audio_play_sound(catchSound, 1, false);
+				}
+				
+			}
 		}
 	break;
 	case menuScreen.LEVEL_SEL:

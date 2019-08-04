@@ -1,6 +1,54 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+for(var i = 0; i < 4; i++) {
+	
+	key_left[i] = 0;
+	key_right[i] = 0;
+	key_down[i] = 0;
+	key_up[i] = 0;
+	
+	if gamepad_is_connected(i) {
+		
+		if gamepad_button_check_pressed(i, gp_face1) {
+			controller_pressed_enter[i] = true;
+			event_perform(ev_keypress, vk_enter);
+		} else {
+			controller_pressed_enter[i] = false;	
+		}
+		
+		if controller_can_press[i] {
+			var haxis = gamepad_axis_value(i, gp_axislh);
+			var vaxis = gamepad_axis_value(i, gp_axislv);
+		
+			key_left[i] = haxis < -0.3;
+			key_right[i] = haxis > 0.3;
+			key_down[i] = vaxis > 0.3;
+			key_up[i] = vaxis < -0.3;
+			
+			if (key_left[i] || key_right[i] || key_up[i] || key_down[i]) {
+				controller_can_press[i] = false;
+				alarm_set(i+1, room_speed / 4);
+			}
+		} 
+		
+	} else {
+		
+		if controller_can_press[i] {
+			key_left[i] = keyboard_check(vk_left);
+			key_right[i] = keyboard_check(vk_right);
+			key_up[i] = keyboard_check(vk_up);
+			key_down[i] = keyboard_check(vk_down);
+			if key_left[i] || key_right[i] || key_up[i] || key_down[i] {
+				controller_can_press[i] = false;
+				alarm_set(i+1, room_speed / 4);
+			}
+			
+		}
+	}
+}
+
+
 switch screen {
 	case menuScreen.TITLE:
 		if !mainAnimFinished {
@@ -11,7 +59,7 @@ switch screen {
 				mainAnimFinished = true;
 		} else {
 
-			menu_move = keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
+			menu_move = key_down[0] - key_up[0];
 
 			menu_index += menu_move;
 
@@ -37,7 +85,7 @@ switch screen {
 		}
 		
 		if(!optionBackgroundSel && !optionSoundEffSel) {
-			menu_move = keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
+			menu_move = key_down[0] - key_up[0];
 			menu_index += menu_move;
 			
 			if (menu_index < 0) 
@@ -46,22 +94,17 @@ switch screen {
 				menu_index = 0;
 		}
 		
-		var adj = keyboard_check(vk_right) - keyboard_check(vk_left);
-		
-		if volumeSwitch && adj != 0 {
-			volumeSwitch = false;
-			alarm_set(0, room_speed / 5);
+		var adj = key_right[0] - key_left[0];
 
-			if optionBackgroundSel 
-				option_button_arg[0] += adj;
-			else if optionSoundEffSel
-				option_button_arg[1] += adj;
+		if optionBackgroundSel 
+			option_button_arg[0] += adj;
+		else if optionSoundEffSel
+			option_button_arg[1] += adj;
 			
-			option_button_arg[0] = max(0, option_button_arg[0]);
-			option_button_arg[1] = max(0, option_button_arg[1]);
-			option_button_arg[0] = min(100, option_button_arg[0]);
-			option_button_arg[1] = min(100, option_button_arg[1]);
-		}
+		option_button_arg[0] = max(0, option_button_arg[0]);
+		option_button_arg[1] = max(0, option_button_arg[1]);
+		option_button_arg[0] = min(100, option_button_arg[0]);
+		option_button_arg[1] = min(100, option_button_arg[1]);
 		
 		if (menu_index != last_selected) 
 			audio_play_sound(catchSound, 1, false);
@@ -71,15 +114,38 @@ switch screen {
 	break;
 	case menuScreen.CHAR_SEL:
 		if char_players_selected { // has selected num players
-			
-			
 				
+			var finished = true;	
+			for(var i = 0; i < char_button_arg[0]; i++) {
+				if !playerLockedIn[i] {
+					finished = false;
+				}
+			}
+			
+			if finished {
+			
+				room_goto(speartest);
+				
+			}
+				
+			for(var i = 0; i < 4; i++) {
+			
+				var adj = key_right[i] - key_left[i];
+				
+				if !playerLockedIn[i] {
+					playerSel[i] += adj;
+					playerSel[i] = max(0, playerSel[i]);
+					playerSel[i] = min(3, playerSel[i]);
+				}
+			
+			}
+			
 		} else { // still selecting num of players
 			
-			var adj = keyboard_check_pressed(vk_right) - keyboard_check_pressed(vk_left);			
+			var adj = key_right[0] - key_left[0];			
 			char_button_arg[0] += adj;
 			char_button_arg[0] = max(2, char_button_arg[0]);
-			char_button_arg[0] = min(4, char_button_arg[0]);
+			char_button_arg[0] = min(num_controllers+1, char_button_arg[0]);
 
 		}
 	

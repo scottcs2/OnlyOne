@@ -9,6 +9,30 @@ x_gap = 100;
 menu_index = 0;
 last_selected = 0;
 
+for(var i = 0; i < 4; i++) {
+	controller_can_press[i] = true;
+	controller_pressed_enter[i] = false;
+	playerSel[i] = 0;
+	playerLockedIn[i] = false;
+}
+
+num_controllers = 4;
+
+for(var i = 0; i < 4; i++) {
+	if gamepad_is_connected(i)
+		continue;
+	else {
+		num_controllers = i;
+		break;
+	}
+}
+
+
+characterPortrait[0] = sSpectrePortrait;
+characterPortrait[1] = sSkelePortrait;
+characterPortrait[2] = sSnakePortrait;
+characterPortrait[3] = sCatPortrait;
+
 enum menuScreen {
 	TITLE = 0,
 	OPTION = 1,
@@ -21,7 +45,7 @@ screen = menuScreen.TITLE;
 // specific main menu stuff
 
 main_final_x = width - x_gap;
-slide_speed = 1
+slide_speed = 1;
 main_button_t[0] = "Play";
 main_button_t[1] = "Options";
 main_button_t[2] = "Exit";
@@ -86,4 +110,5 @@ for(var i = 0; i < 4; i++) {
 	char_portrait_y[i] = char_button_y[i+1] + 80;
 }
 
+draw_portrait = true;
 char_num_buttons = array_length_1d(char_button_x);
