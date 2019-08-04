@@ -123,6 +123,10 @@ switch screen {
 			}
 			
 			if finished {
+				audio_stop_sound(menuMusic);
+				inGame = true;
+				audio_stop_all();
+				audio_play_sound(inGameMusic,1, true);
 				room_goto(room0);
 				
 				global.players = [-2, -2, -2, -2];
@@ -168,3 +172,11 @@ switch screen {
 	case menuScreen.LEVEL_SEL:
 		break;
 }		
+
+if audio_group_is_loaded(Background_Music)  && !inGame {
+
+	if !audio_is_playing(menuMusic) {
+		audio_play_sound(menuMusic, 1, true);	
+	}
+	
+}

@@ -9,6 +9,8 @@ x_gap = 100;
 menu_index = 0;
 last_selected = 0;
 
+inGame = false;
+
 for(var i = 0; i < 4; i++) {
 	controller_can_press[i] = true;
 	controller_pressed_enter[i] = false;

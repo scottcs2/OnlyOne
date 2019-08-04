@@ -2,6 +2,19 @@
 // You can write your code in this editor
 
 
+for (var i = 0; i < 4; i++) {
+
+	if gamepad_is_connected(i) {
+	
+		if gamepad_button_check_pressed(i, gp_face1) {
+			event_perform(ev_keypress, vk_enter);
+		}
+		
+	}
+	
+}
+
+
 if anim_fin && loop_ctr > 0
 	room_goto(menu_screen);
 

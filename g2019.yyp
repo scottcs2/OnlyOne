@@ -167,14 +167,6 @@
             }
         },
         {
-            "Key": "2fb5bc19-1940-4cb1-93a4-d62eb0b7b5a5",
-            "Value": {
-                "id": "a532e1db-5199-4810-b55d-9eea49b6c4bb",
-                "resourcePath": "sounds\\backgroundMusic\\backgroundMusic.yy",
-                "resourceType": "GMSound"
-            }
-        },
-        {
             "Key": "30a0d61c-07e4-4b3a-8edb-02071f722d88",
             "Value": {
                 "id": "26d07e5f-c3c8-4ee6-83c5-fe81fe19ba88",
@@ -204,6 +196,14 @@
                 "id": "d3113498-af50-49dd-968e-9217132c1480",
                 "resourcePath": "sprites\\sSpectrePortrait\\sSpectrePortrait.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "42ae5d28-d216-4152-8459-886e5bd119ef",
+            "Value": {
+                "id": "fa0b9d36-2204-475e-8db0-cadab62f411d",
+                "resourcePath": "sounds\\inGameMusic\\inGameMusic.yy",
+                "resourceType": "GMSound"
             }
         },
         {
@@ -911,6 +911,14 @@
             }
         },
         {
+            "Key": "e23ef2f9-ce59-483c-a874-1d11f08a249a",
+            "Value": {
+                "id": "de91b296-b150-4ccf-a1b2-5019151675e6",
+                "resourcePath": "sounds\\menuMusic\\menuMusic.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "e33283ae-c7d1-43bd-98cc-1fa652a0b075",
             "Value": {
                 "id": "6acda9ba-d45e-49bd-a23d-6718e8a87e1b",
@@ -940,6 +948,14 @@
                 "id": "b542b85d-5c70-47d8-bbc8-8e23c64d507c",
                 "resourcePath": "views\\e73a1f98-6c22-42d3-9178-d965fb410c04.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e830b36b-66b9-47d6-bcd8-011a09303d3c",
+            "Value": {
+                "id": "46610958-6c18-471a-ae65-6d9ea61eb484",
+                "resourcePath": "sprites\\sprite68\\sprite68.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
