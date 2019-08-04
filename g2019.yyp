@@ -111,6 +111,22 @@
             }
         },
         {
+            "Key": "138e3414-8279-4c0e-95c6-865e62e7a60e",
+            "Value": {
+                "id": "e3dba873-40e8-46f6-9bee-0e24a7e31b67",
+                "resourcePath": "sprites\\sSpectreCrouch\\sSpectreCrouch.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "15f0655c-627d-4e73-b7f7-a5f6af3c374d",
+            "Value": {
+                "id": "928638fd-0ed5-4a23-b083-3b4b7526c0ef",
+                "resourcePath": "sprites\\sCatCrouch\\sCatCrouch.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "16a2fc54-e2c9-459d-9e80-ed88dfb70075",
             "Value": {
                 "id": "1045f8da-3422-4a65-b026-849beabe2d8c",
@@ -300,6 +316,14 @@
                 "id": "bce06f74-8c8e-46d7-9a22-3bc4a08e7d01",
                 "resourcePath": "objects\\oPlayerSpawn\\oPlayerSpawn.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "579bad09-8de2-41c8-9847-f6d142e0ec11",
+            "Value": {
+                "id": "5473846f-f1b3-4816-8e5f-678c40173ee6",
+                "resourcePath": "sprites\\sSnakeCrouch\\sSnakeCrouch.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -860,6 +884,14 @@
                 "id": "7c8d2f37-d02e-4fa1-b0da-27e821596a79",
                 "resourcePath": "views\\de73603a-de04-40e9-a49e-f6db726f5f83.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "ded46624-8dec-4e0a-b128-4879762fc705",
+            "Value": {
+                "id": "d19c17ef-2dfd-4ca8-b731-867799187769",
+                "resourcePath": "sprites\\sSkeleCrouch\\sSkeleCrouch.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
