@@ -533,6 +533,14 @@
                 "resourcePath": "objects\\oTitleScreen\\oTitleScreen.yy",
                 "resourceType": "GMObject"
             }
+        },
+        {
+            "Key": "ffff825e-462d-4521-a17d-27ae909cb2b5",
+            "Value": {
+                "id": "57fe8fed-202c-4543-8207-cb558fc6fc44",
+                "resourcePath": "rooms\\room0\\room0.yy",
+                "resourceType": "GMRoom"
+            }
         }
     ],
     "script_order": [
